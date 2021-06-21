@@ -1,12 +1,13 @@
-FROM node:10
+FROM node:10.20
+
+WORKDIR /manage
 
 RUN apt-get update \
   && apt-get install -y ruby ruby-dev \
-  && gem install sass
+  && gem install sass \
+  && npm install
 
 ADD . /manage
-
-WORKDIR /manage
 
 # RUN npm install
 
