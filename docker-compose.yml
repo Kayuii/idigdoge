@@ -1,0 +1,9 @@
+version: "3"
+services:
+    redis:
+        image: redis:2.8
+        ports:
+            - 3333:6379
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+            - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
